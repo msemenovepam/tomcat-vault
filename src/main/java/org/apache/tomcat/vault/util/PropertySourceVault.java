@@ -91,7 +91,7 @@ public class PropertySourceVault implements PropertySource {
                     try {
                         result = new String(vault.retrieve(vaultdata[1], vaultdata[2], null));
                     } catch (SecurityVaultException e) {
-                        log.error(e.getMessage(), e);
+                        log.warn("Unable to lookup property $ :".replace("$",arg0) + e.getMessage());
                     }
                 }
             }
